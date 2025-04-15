@@ -27,7 +27,7 @@ def extract_claims(article_content):
 object {{"claim_id":x,"claim":claim_made}}"""
 
     completion = client.chat.completions.create(
-        model="compound-beta",
+        model="meta-llama/llama-4-maverick-17b-128e-instruct",
         messages=[{"role": "user", "content": prompt}]
     )
     return completion.choices[0].message.content
