@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Groq Fact Checker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <h1>Groq Fact Checker</h1>
+    </div>
+    <div class="content">
+      <button id="check-facts" class="primary-button">Check Facts on This Page</button>
+      <div id="api-key-warning" class="warning-message" style="display: none;">
+        <p>⚠️ Groq API key not set</p>
+        <a href="#" id="open-options">Set your API key</a>
+      </div>
+      <div id="status" class="status-message"></div>
+    </div>
+    <div class="footer">
+      <p>Powered by Groq Compound</p>
+      <a href="#" id="open-settings" class="settings-link">Settings</a>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

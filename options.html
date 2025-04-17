@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Groq Fact Checker Options</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .options-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: var(--groq-white);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .section {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--groq-border);
+    }
+    
+    .field {
+      margin-bottom: 16px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--groq-border);
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    .save-button {
+      background-color: var(--groq-red);
+      color: var(--groq-white);
+      border: none;
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .save-button:hover {
+      background-color: #c73f30;
+    }
+    
+    .status {
+      margin-top: 16px;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    .status.success {
+      background-color: #e8f5e9;
+      color: var(--groq-green);
+    }
+    
+    .status.error {
+      background-color: #fdecea;
+      color: var(--groq-red);
+    }
+  </style>
+</head>
+<body>
+  <div class="options-container">
+    <div class="header">
+      <h1>Groq Fact Checker Options</h1>
+    </div>
+    
+    <div class="section">
+      <h2>API Configuration</h2>
+      <p>Enter your Groq API key to enable fact checking.</p>
+      
+      <div class="field">
+        <label for="apiKey">Groq API Key:</label>
+        <input type="password" id="apiKey" placeholder="gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+      </div>
+      
+      <button id="saveBtn" class="save-button">Save Settings</button>
+      
+      <div id="status" class="status" style="display: none;"></div>
+    </div>
+    
+    <div class="section">
+      <h2>About Groq API Keys</h2>
+      <p>To use this extension, you need a Groq API key with access to the Compound model.</p>
+      <p>Get your API key by signing up at <a href="https://console.groq.com" target="_blank">console.groq.com</a>.</p>
+    </div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
