@@ -1,47 +1,78 @@
-# Python virtual environment
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
 venv/
 env/
 ENV/
 .env
 
-# Python bytecode
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Distribution / packaging
-dist/
-build/
-*.egg-info/
-
-# IDE files
+# IDE
 .idea/
 .vscode/
-*.sublime-project
-*.sublime-workspace
-
-# OS specific files
-.DS_Store
-Thumbs.db
 *.swp
-*~
+*.swo
+.DS_Store
 
-# Chrome extension packaging
-*.crx
-*.pem
-*.zip
-
-# Node.js (if you add any npm packages later)
-node_modules/
-npm-debug.log
-
-# Logs
+# Project specific
+.env
 *.log
+*.sqlite3
 
-# Temporary files
-tmp/
-temp/
+# Gradio
+.gradio/
 
-# Personal API keys and credentials
-api_keys.txt
-credentials.json
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg 

@@ -1,19 +1,19 @@
-# Groq Compound Fact Checker Chrome Extension
+# Groq Compound Fact Checker
 
-A Chrome extension that uses Groq's Compound model to extract and fact-check claims from web pages in real-time.
+A web application that uses Groq's Compound model to extract and fact-check claims from news articles. Built with Gradio for a user-friendly interface.
 
 ## Features
 
-- Extract key claims from web pages you're browsing
+- Extract key claims from news articles
 - Fact-check claims using Groq's Compound model
-- Clean and intuitive overlay UI
+- Clean and intuitive web interface
 - Real-time processing with progress updates
 - Access to real-time information through web search
 - Intelligent claim verification with source attribution
 
 ## About the Compound Model
 
-This extension leverages Groq's `compound-beta` model, an advanced AI system that combines the power of Llama 4 and Llama 3.3 70b models with agentic tooling capabilities. The model can:
+This application leverages Groq's `compound-beta` model, an advanced AI system that combines the power of Llama 4 and Llama 3.3 70b models with agentic tooling capabilities. The model can:
 
 - Access real-time information through web search
 - Execute code for data analysis
@@ -28,49 +28,61 @@ The `compound-beta` model is particularly well-suited for fact-checking because 
 
 ## Prerequisites
 
-- Chrome browser
-- Groq API key (starts with `gsk_`) with access to the Compound model
+- Python 3.8 or higher
+- Groq API key
+- Virtual environment (recommended)
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/martinbowling/groq-compound-fact-check-chrome-extension.git
+git clone https://github.com/martinbowling/groq-compound-fact-check-gradio.git
+cd groq-compound-fact-check-gradio
 ```
 
-2. Open Chrome and navigate to `chrome://extensions/`
-3. Enable "Developer mode" by toggling the switch in the top right
-4. Click "Load unpacked" and select the `groq-compound-fact-check-chrome-extension` directory
-5. The extension icon should appear in your browser toolbar
-6. Click on the extension icon and then click "Settings" to open the options page
-7. Enter your Groq API key and save the settings
+2. Create and activate a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+```
+
+3. Install required packages:
+```bash
+pip install gradio groq python-dotenv requests
+```
+
+4. Create a `.env` file in the project root and add your Groq API key:
+```
+GROQ_API_KEY=your_api_key_here
+```
 
 ## Usage
 
-1. Navigate to any news article or web page
-2. Click the Groq Fact Checker extension icon in your toolbar
-3. Click "Check Facts on This Page" in the popup
-4. An overlay will appear on the page showing:
-   - Extracted claims from the page
-   - Verification status (True/False) for each claim
-   - Detailed explanation with sources
+1. Start the application:
+```bash
+python main.py
+```
+
+2. Open your web browser and navigate to the URL shown in the terminal (typically http://127.0.0.1:7860)
+
+3. Enter a news article URL in the input field and click "Check Facts"
+
+4. The application will:
+   - Fetch the article content
+   - Extract key claims
+   - Fact-check each claim using real-time information
+   - Display the results with sources and explanations
 
 ## How It Works
 
-1. **Content Extraction**: Converts HTML page content to markdown format
-2. **Claim Extraction**: Uses Groq's Compound model to identify key claims from the content
+1. **Article Fetching**: Uses the Markdowner API to extract clean text from news articles
+2. **Claim Extraction**: Uses Groq's Compound model to identify key claims from the article
 3. **Fact Checking**: 
    - Uses Groq's Compound model to verify each claim
    - Automatically searches for current information
    - Cross-references multiple sources
    - Provides detailed explanations with sources
-4. **User Interface**: Modern overlay UI that appears on the page
-
-## Development
-
-To modify the extension:
-1. Edit the files in the extension directory
-2. Reload the extension in `chrome://extensions/` by clicking the refresh icon
+4. **User Interface**: Built with Gradio for a seamless user experience
 
 ## License
 
@@ -83,4 +95,5 @@ This project is open source and available under the MIT License.
 ## Acknowledgments
 
 - [Groq](https://groq.com/) for providing the AI models and agentic tooling capabilities
-- [Gradio](https://gradio.app/) for the backend API framework
+- [Gradio](https://gradio.app/) for the web interface framework
+- [Markdowner API](https://md.dhr.wtf/) for article text extraction
